@@ -50,6 +50,13 @@ h5 {
 
 h6 {
   font-size: .9375rem;
+  text-transform: uppercase;
+}
+
+.titles {
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 1em;
 }
 
 .card-body {
@@ -114,12 +121,14 @@ h6 {
 }
 
 .documentation .left-sidebar .logo-wrapper {
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   margin-bottom: 1.6rem;
+  /* background-color: #f5989d; */
 }
 
 .documentation .left-sidebar .logo-wrapper img {
-  height: 24px;
+  /* height: 24px; */
+  width: 120px;
 }
 
 .documentation .left-sidebar .left-menu-title {
