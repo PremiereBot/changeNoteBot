@@ -19,21 +19,20 @@
     <div class="row">
       <div class="col-md-3 col-xl-6 left-sidebar">
         <div class="logo-wrapper">
-          <img src="./img/CH Note Logo.png" alt="logo">
+          <a href="#"> <img src="./img/CH Note Logo.png" alt="logo"> </a> 
         </div>
         <h6 class="left-menu-title">Documentation</h6>
         <ul class="left-menu">
           <li><a href="#introduction"> Introduction </a></li>
-          <li><a href="#whatIs"> What is a change note? </a></li>
+          <li><a href="#what-is"> What is a change note? </a></li>
           <li><a href="#installation"> Installation </a></li>
         </ul>
 
         <h6 class="left-menu-title">How to Use it?</h6>
         <ul class="left-menu">
-          <li><a href="#preparing"> Preparing Your Timeline </a></li>
-          <li><a href="#exporting"> Exporting the Change Note </a></li>
-          <li><a href="#leftSidebar"> Checking the Files </a></li>
-          <li><a href="#footer"> Footer </a></li>
+          <li><a href="#preparing"> Preparing the sequence </a></li>
+          <li><a href="#using-the-panel"> Using the panel </a></li>
+          <li><a href="#exported-files"> Exported files</a></li>
         </ul>
         <h6 class="left-menu-title">Contact</h6>
         <ul class="left-menu">
@@ -53,14 +52,18 @@
                 Usually this text file is sent to the audio department, or VFX department,
                 and helps to re-conform the sound session. </p>
               <ul>
+                <li>It is directly integrated into Premiere. Forget about exporting EDLs or XMLs.</li>
                 <li>Can be formatted using Timecode, Feet+Frames or Frame Count.</li>
                 <li>An extra JSON file will be exported with all the data formatted accordingly.</li>
               </ul>
+              <p> This documentation website is intended to give a reference on how to use the panel and provide a brief overview of what a change note is.
+                  But we assume that if you have landed in this website, you already have some experience creating change notes, and you are familiarized with 
+                  the audio turnover process.</p>
             </div>
           </div>
           <div class="card grid-margin">
             <div class="card-body">
-              <h3 id="whatIs" class="mb-4">What is a change note?</h3>
+              <h3 id="what-is" class="mb-4">What is a change note?</h3>
               <p>A change note is a human-readable step-by-step instructions printed in a text file, that helps to convert the old picture cut to the new picture cut. 
                 This text file has many uses, but primarily it helps to automatically conform a Pro Tools session to the new cut.</p>
               <p>It’s main body looks similar to this: </p>
@@ -91,24 +94,65 @@
 
           <div class="card grid-margin">
             <div class="card-body">
-              <h3 id="preparing" class="mb-4">Preparing your sequences</h3>
+              <h3 id="preparing" class="mb-4">Preparing the sequences</h3>
               <!-- <h4 class="pt-4"> Preparing your Timeline </h4> -->
               <p>Before using the panel, you’ll need to prepare your sequences to get the best results. 
                 This is a common step in every production and is independent of the NLE you’re using. 
                 If you ever had any experience with turnovers, you should be familiarized with this process. </p>
-              <p>There are mainly 2 steps:</p>
-              <p>1. Flattening your sequence into a single video track</p>
-              <p>2. Get rid of any complexity</p></br>
-
-              <h5>Flattening your sequence into a single video track</h5>
+              <p>The main goal is to flatten the whole reel into a single video track, and try to minimize complexity. 
+                <b>The Change Note Bot panel will always analyze the video track 1</b> from both sequences. Make sure your flattened reel is in video track 1.</p>
               <p> Flattening your sequence into a single video track is the most complicated and time consuming step in the process. 
-                And probably the most important one too. The idea is to flatten the whole reel into a single video track. </p>
+                And probably the most important one too. It is recommended to go through this process with caution. </p>
               
               <h6 class="mb-2" style="padding-top: 1em;"> Original Reel </h6>
               <img src="./img/OriginalReel.jpg" width="100%">
               <h6 class="mb-2" style="padding-top: 1em;"> Flattened Reel </h6>
-              <img src="./img/FlattenedReel.jpg" width="100%">
+              <img src="./img/FlattenedReel.jpg" width="100%"></br></br></br>
+            </div>
+          </div>
 
+          <div class="card grid-margin">
+            <div class="card-body">
+              <h3 id="using-the-panel" class="mb-4">Using the panel</h3>
+              <p>The Change Note Bot panel is a fairly simple panel. Once your sequences have been flattened, use the dropdown menus to select
+                the old sequence and the new sequence, select your prefered output format and click on Export Change Note. 
+                A save dialog will pop up, pick a location and a name and save the file.
+              </p>
+              Some important points:
+                <ul>
+                  <li>The dropdowns will list all sequences from any current open project at that time - including nested sequences.</li>
+                  <li>Use the ‘Refresh Sequences Lists’ button to refresh the dropdown sequence lists, for example, if you've created or deleted a new sequence.</li>
+                  <li>There are 3 different formats to choose from: Timecode, Feet+Frame and Frames.</li>
+                  <ul>
+                    <li>Timecode format will use the sequence start time for the output.</li>
+                    <li>Feet+Frame and Frames formats will use absolute time and it will always start at 0000+00</li>
+                  </ul>
+                  <li>If a file with the same name already exists on the selected location path, <b> the panel will overwrite it.</b></li>
+                </ul>
+              
+              <h6 class="mb-2" style="padding-top: 1em;"> Change Note Bot Panel </h6>
+              <img src='./img/ChangeNoteBot_01.jpg' width="100%">
+
+              <h6 class="mb-2" style="padding-top: 1em;"> Picking your sequences </h6>
+              <img src='./img/ChangeNoteBot_02.jpg' width="100%">
+
+              <h6 class="mb-2" style="padding-top: 1em;"> Progress Indication </h6>
+              <img src='./img/ChangeNoteBot_Success.jpg' width="100%">
+            </div>
+          </div>
+
+
+          <div class="card grid-margin">
+            <div class="card-body">
+              <h3 id="exported-files" class="mb-4">Exported Files</h3>
+              <p>The Change Note Bot panel will export 2 files with every export:</p>
+              <ol>
+                <li>A .txt file. This is the standard change note text file, 
+                  what the majority of people expect, and what the majority will send to the audio department.</li>
+                <li>A .json file. This is an extra file we generate with the same information but formatted in a JSON structured. 
+                  This file is easier to parse and be read by a 3rd party application, because all the data is correctly structured in a defined way. </li>
+              </ol>
+              
             </div>
           </div>
 
