@@ -57,14 +57,14 @@
                 <li>An extra JSON file will be exported with all the data formatted accordingly.</li>
               </ul>
               <p> This documentation website is intended to give a reference on how to use the panel and provide a brief overview of what a change note is.
-                  But we assume that if you have landed in this website, you already have some experience creating change notes, and you are familiarized with 
+                  We assume that if you have landed in this website, you already have some experience creating change notes, and you are familiar with 
                   the audio turnover process.</p>
             </div>
           </div>
           <div class="card grid-margin">
             <div class="card-body">
               <h3 id="what-is" class="mb-4">What is a change note?</h3>
-              <p>A change note is a human-readable step-by-step instructions printed in a text file, that helps to convert the old picture cut to the new picture cut. 
+              <p>A change note is a human-readable step-by-step instructions printed in a text file that helps to convert the old picture cut to the new picture cut. 
                 This text file has many uses, but primarily it helps to automatically conform a Pro Tools session to the new cut.</p>
               <p>It’s main body looks similar to this: </p>
               <img src='./img/Change Note 3.jpg' alt='changeNote' width="100%" >
@@ -98,9 +98,9 @@
               <!-- <h4 class="pt-4"> Preparing your Timeline </h4> -->
               <p>Before using the panel, you’ll need to prepare your sequences to get the best results. 
                 This is a common step in every production and is independent of the NLE you’re using. 
-                If you ever had any experience with turnovers, you should be familiarized with this process. </p>
-              <p>The main goal is to flatten the whole reel into a single video track, and try to minimize complexity. 
-                <b>The Change Note Bot panel will always analyze the video track 1</b> from both sequences. Make sure your flattened reel is in video track 1.</p>
+                If you have had experience with turnovers, you should be familiar with this process. </p>
+              <p>The main goal is to flatten the whole reel into a single video track. 
+                <b>The Change Note Bot panel will always analyze video track 1</b> from both sequences. Make sure your flattened reel is in video track 1.</p>
               <p> Flattening your sequence into a single video track is the most complicated and time consuming step in the process. 
                 And probably the most important one too. It is recommended to go through this process with caution. </p>
               
@@ -147,10 +147,9 @@
               <h3 id="exported-files" class="mb-4">Exported Files</h3>
               <p>The Change Note Bot panel will export 2 files with every export:</p>
               <ol>
-                <li>A .txt file. This is the standard change note text file, 
-                  what the majority of people expect, and what the majority will send to the audio department.</li>
-                <li>A .json file. This is an extra file we generate with the same information but formatted in a JSON structured. 
-                  This file is easier to parse and be read by a 3rd party application, because all the data is correctly structured in a defined way. </li>
+                <li>A .txt file. This is the standard change note text file, and what is mostly sent to the audio department.</li>
+                <li>A .json file. This is an extra file that is generated with the same information but formatted in a JSON structure. 
+                  This file is easier to parse and can be read by a 3rd party application, because all the data is correctly structured in a defined way. </li>
               </ol>
               
             </div>
